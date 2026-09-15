@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   role_name: linux_server_hardening
-  namespace: iserverseo_support
+  namespace: iserverseo-support
   author: iServerSupport
   description: Automated Linux server hardening for SSH, firewall, sysctl, and basic system security.
   company: iServerSupport
