@@ -1,0 +1,27 @@
+#SPDX-License-Identifier: MIT-0
+---
+# defaults file for linux_server_hardening
+---
+# Linux Server Hardening defaults
+
+ssh_port: 22
+
+ssh_permit_root_login: "no"
+ssh_password_authentication: true
+ssh_max_auth_tries: 4
+ssh_login_grace_time: 60
+ssh_client_alive_interval: 300
+ssh_client_alive_count_max: 2
+
+enable_firewall: true
+
+firewall_allowed_tcp_ports:
+  - "{{ ssh_port }}"
+
+configure_sysctl: true
+
+disable_ip_forwarding: true
+enable_tcp_syncookies: true
+disable_core_dumps: true
+
+update_package_cache: true

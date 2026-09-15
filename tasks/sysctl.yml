@@ -1,0 +1,24 @@
+---
+- name: Enable TCP SYN cookies
+  ansible.posix.sysctl:
+    name: net.ipv4.tcp_syncookies
+    value: "1"
+    state: present
+    reload: true
+  when: enable_tcp_syncookies
+
+- name: Disable IPv4 forwarding
+  ansible.posix.sysctl:
+    name: net.ipv4.ip_forward
+    value: "0"
+    state: present
+    reload: true
+  when: disable_ip_forwarding
+
+- name: Disable core dumps
+  ansible.posix.sysctl:
+    name: fs.suid_dumpable
+    value: "0"
+    state: present
+    reload: true
+  when: disable_core_dumps

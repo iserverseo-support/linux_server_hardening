@@ -1,0 +1,15 @@
+---
+- name: Update package cache on Debian-based systems
+  ansible.builtin.apt:
+    update_cache: true
+    cache_valid_time: 3600
+  when:
+    - update_package_cache
+    - ansible_os_family == "Debian"
+
+- name: Update package cache on RHEL-based systems
+  ansible.builtin.dnf:
+    update_cache: true
+  when:
+    - update_package_cache
+    - ansible_os_family == "RedHat"

@@ -1,0 +1,20 @@
+#SPDX-License-Identifier: MIT-0
+---
+# tasks file for linux_server_hardening
+---
+- name: Include package tasks
+  ansible.builtin.include_tasks:
+    file: packages.yml
+
+- name: Include SSH hardening
+  ansible.builtin.include_tasks:
+    file: ssh.yml
+
+- name: Include sysctl hardening
+  ansible.builtin.include_tasks:
+    file: sysctl.yml
+  when: configure_sysctl
+
+- name: Include firewall configuration
+  ansible.builtin.include_tasks:
+    file: firewall.yml

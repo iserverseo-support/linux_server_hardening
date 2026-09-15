@@ -1,0 +1,13 @@
+# Managed by Ansible - linux_server_hardening
+
+PermitRootLogin {{ ssh_permit_root_login }}
+
+PasswordAuthentication {{ 'yes' if ssh_password_authentication else 'no' }}
+
+MaxAuthTries {{ ssh_max_auth_tries }}
+
+LoginGraceTime {{ ssh_login_grace_time }}
+
+ClientAliveInterval {{ ssh_client_alive_interval }}
+
+ClientAliveCountMax {{ ssh_client_alive_count_max }}
