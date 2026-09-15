@@ -38,3 +38,20 @@ Install the required collections:
 
 ```bash
 ansible-galaxy collection install ansible.posix community.general
+
+## Installation
+
+Install the role from Ansible Galaxy:
+
+```bash
+ansible-galaxy role install iserverseo-support.linux_server_hardening
+
+## Related Resource
+
+For broader Linux server administration and operational support:
+
+https://iserversupport.com/linux-server-management/
+
+## License
+
+MIT
